@@ -1,32 +1,36 @@
-// const board = [["", "", ""], ["", "", ""], ["", "", ""]];
-
-const boxes = document.querySelectorAll('.box');
-
+const boxes = document.querySelectorAll(".box");
 let playerOneTurn = true;
-
-const currentUserTurn = "X"
 
 boxes.forEach(element => {
     element.addEventListener("click", start, { once: true })
-
 })
 function start(element) {
-
+    //target is like a pointer for HTML to point
     let eachBox = element.target // target each box when clicked
-    console.log(eachBox);
+    const currentUserTurn = playerOneTurn ? "O" : "X";
 
-    diffChoices(eachBox)
+
+
+    nextTurn();
+    draw(currentUserTurn);
+    diffChoices(eachBox, currentUserTurn);
+    console.log(playerOneTurn, currentUserTurn);
 }
-function diffChoices(eachBox) {
-    eachBox.innterText = "X";
-    console.log(eachBox.innterText)
 
+//check functions
+function diffChoices(eachBox, currentUserTurn) {
+    eachBox.innerText = currentUserTurn;
 }
 
-
-
-
-//target is like a pointer for HTML to point
+//returned this function above
+function nextTurn() {
+    playerOneTurn = !playerOneTurn;
+}
+function draw() {
+    return Object.values(boxes).every(e => {
+        return e.innerText !== ""
+    })
+}
 
 // class Game {
 //     constructor(X, O) {

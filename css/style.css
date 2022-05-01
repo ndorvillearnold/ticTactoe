@@ -14,6 +14,7 @@ h1 {
 .row {
 	height: 100px;
 	display: flex;
+	color: blue;
 }
 .box {
 	height: 100px;
@@ -26,16 +27,16 @@ h1 {
 }
 
 .box:hover {
-	background-color: lightgrey;
+	background-color: darkgray;
 }
 
 /*border bottom*/
 .border-b {
-	border-bottom: 10px solid black;
+	border-bottom: 10px solid;
 }
 /*border bottom*/
 .border-r {
-	border-right: 10px solid black;
+	border-right: 10px solid;
 }
 button {
 	justify-content: center;
@@ -46,13 +47,13 @@ input {
 	justify-content: center;
 	border: solid 5px;
 	margin-bottom: 10px;
-} 
+	color: aqua;
+}
 
-/* restart {
+#restart {
 	font-size: 25px;
 	margin-top: 20px;
 	padding: 5px 25px;
-	box-shadow: 8px 8px 2px 1px #bcbed2;
+
 	border-radius: 5px;
-	background-color: #a7abdd;
 }
